@@ -16,11 +16,11 @@
   
   
 <style>
-#Sidebar-ad
-{
+/* Desktop styles */
+#Sidebar-ad {
   position: fixed;
-  top:80px;
-  right:0;
+  top: 80px;
+  right: 0;
   width: 300px;
   height: 600px;
   display: flex;
@@ -28,22 +28,54 @@
   background: transparent;
   justify-content: center;
   padding-left: 5px;
-  z-index:999999;
+  z-index: 999999;
 }
 
-#closebutton{
+#closebutton {
   height: 30px;
   width: 30px;
   color: #fff;
   background-color: #000;
   position: fixed;
-  top:85px;
-  right:0;
+  top: 85px;
+  right: 0;
   display: flex;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 9999999;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  #Sidebar-ad {
+    position: fixed;
+    top: 30%;
+    right: 0;
+    width: 25%;
+    height: auto;
+    display: flex;
+    color: #000;
+    background: transparent;
+    justify-content: center;
+    padding-left: 5px;
+    z-index: 999999;
+  }
+
+  #closebutton {
+    height: 30px;
+    width: 30px;
+    color: #fff;
+    background-color: #000;
+    position: fixed;
+    top: 25%;
+    right: 0;
+    display: flex;
     justify-content: center;
     border-radius: 50%;
-  cursor: pointer;
-   z-index:9999999;
+    cursor: pointer;
+    z-index: 9999999;
+  }
 }
 </style>
 
@@ -4906,7 +4938,11 @@ $(document).ready(function () {
   $(window.parent.document).find('body').css("padding-right", "300px");
 
   if (isMobile) {
-    $(window.parent.document).find("#header").css("width", "375px");
+    $(window.parent.document).find("#header").css("width", "75%");
+    $(window.parent.document).find('body').css("padding-right", "");
+    $(window.parent.document).find('body').css("width", "75%");
+    $(window.parent.document).find('body').css("margin-left", "initial");
+    
   } else {
     $(window.parent.document).find("#header").css("padding-right", "300px");
     $(window.parent.document).find("#header").css("width", "1140px");
